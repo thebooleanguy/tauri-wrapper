@@ -106,7 +106,7 @@ cd tauri-wrapper
    fn start_spring_boot() {
      Command::new("java")
      .arg("-jar")
-     .arg("./assets/demo.jar")
+     .arg("./assets/dictionary-app-web.jar")
      .spawn()
      .expect("Failed to start Spring Boot application");
    }
