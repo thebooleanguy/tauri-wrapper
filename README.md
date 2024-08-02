@@ -1,16 +1,18 @@
-<br><br>
-
 # Tauri Wrapper 🚀
 
 This repository contains a Tauri wrapper for personal use. The project is public for anyone who might find it useful.
-
-<br><br>
 
 ## Features ✨
 - Cross-platform desktop application
 - Lightweight and fast
 
-<br><br>
+<br>
+
+### Requirements 📋
+
+- **Rust**: Install from [rustup.rs](https://rustup.rs/) or your package manager
+- **Node.js**: Install from [nodejs.org](https://nodejs.org/) or your package manager
+- **Tauri CLI**: Install with `cargo install tauri-cli`
 
 ## Installation 🛠️
 
@@ -22,20 +24,12 @@ cd tauri-wrapper
 
 <br><br>
 
-### Requirements 📋
-
-- **Rust**: Install from [rustup.rs](https://rustup.rs/) or your package manager
-- **Node.js**: Install from [nodejs.org](https://nodejs.org/) or your package manager
-- **Tauri CLI**: Install with `cargo install tauri-cli`
-
-<br><br>
-
 ### Setup ⚙️
 
 1. **Add the JAR package to the assets directory:**
    Place your `dictionary-app-web.jar` package in the `assets` directory. Ensure all paths are correctly set as class paths within the JAR.
 
-<br><br>
+<br>
 
 2. **Edit `tauri.conf.json`:**
    Update the `tauri.conf.json` file to match your project's paths and names. Replace placeholders with your actual paths:
@@ -107,7 +101,7 @@ cd tauri-wrapper
    }
    ```
 
-<br><br>
+<br>
 
 3. **Check `src/main.rs`:**
    Ensure that the `src/main.rs` file in your Rust project is configured correctly. Replace the JAR path if necessary:
@@ -164,7 +158,7 @@ cd tauri-wrapper
 
    **Note:** The Tauri application will start with `localhost` autostart. You do not need to bundle `.html` resources as the app will load from the specified URL - can do this because .html already in the bundled .jar file's classpath.
 
-<br><br>
+<br>
 
 ### Running the Application 🚀
 
@@ -179,7 +173,7 @@ To build the application for distribution:
 ```sh
 cargo tauri build
 ```
-<br><br>
+<br>
 
 ### Cross-Compiling for Windows on Fedora 🐧
 
@@ -210,7 +204,7 @@ cargo tauri build
    cargo tauri build --target x86_64-pc-windows-gnu
    ```
 
-<br><br>
+<br>
 
 ## Contributing 🤝
 
