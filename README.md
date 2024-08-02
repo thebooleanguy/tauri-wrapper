@@ -6,6 +6,8 @@ This repository contains a Tauri wrapper for personal use. The project is public
 - Cross-platform desktop application
 - Lightweight and fast
 
+<br><br>
+
 ## Installation 🛠️
 
 Clone the repository:
@@ -14,19 +16,25 @@ git clone https://github.com/thebooleanguy/tauri-wrapper.git
 cd tauri-wrapper
 ```
 
+<br><br>
+
 ### Requirements 📋
 
 - **Rust**: Install from [rustup.rs](https://rustup.rs/) or your package manager
 - **Node.js**: Install from [nodejs.org](https://nodejs.org/) or your package manager
 - **Tauri CLI**: Install with `cargo install tauri-cli`
 
+<br><br>
+
 ### Setup ⚙️
 
 1. **Add the JAR package to the assets directory:**
-   Place your `.jar` package in the `assets` directory. Ensure all paths are correctly set as class paths within the JAR.
+   Place your `dictionary-app-web.jar` package in the `assets` directory. Ensure all paths are correctly set as class paths within the JAR.
+
+<br><br>
 
 2. **Edit `tauri.conf.json`:**
-   Update the `tauri.conf.json` file to match your project's paths and names. Here’s an example configuration:
+   Update the `tauri.conf.json` file to match your project's paths and names. Replace placeholders with your actual paths:
    ```json
    {
      "build": {
@@ -66,7 +74,7 @@ cd tauri-wrapper
            "providerShortName": null,
            "signingIdentity": null
          },
-         "resources": ["./assets/dictionary-app-web.jar"],
+         "resources": ["./assets/dictionary-app-web.jar"],  // Ensure this path matches your JAR file location
          "shortDescription": "Dictionary WebApp",
          "targets": ["appimage"],
          "windows": {
@@ -95,8 +103,10 @@ cd tauri-wrapper
    }
    ```
 
+<br><br>
+
 3. **Check `src/main.rs`:**
-   Ensure that the `src/main.rs` file in your Rust project is configured correctly. Here’s an example:
+   Ensure that the `src/main.rs` file in your Rust project is configured correctly. Replace the JAR path if necessary:
    ```rust
    use std::net::TcpStream;
    use std::process::Command;
@@ -106,7 +116,7 @@ cd tauri-wrapper
    fn start_spring_boot() {
      Command::new("java")
      .arg("-jar")
-     .arg("./assets/dictionary-app-web.jar")
+     .arg("./assets/dictionary-app-web.jar")  // Update path to your JAR file if different
      .spawn()
      .expect("Failed to start Spring Boot application");
    }
@@ -148,19 +158,55 @@ cd tauri-wrapper
    }
    ```
 
-## Building the Application 🏗️
+   **Note:** The Tauri application will start with `localhost` autostart. You do not need to bundle `.html` resources as the app will load from the specified URL - can do this because .html already in the bundled .jar file's classpath.
 
-To build the application for distribution:
-```sh
-cargo tauri build
-```
+<br><br>
 
-## Running the Application 🚀
+### Running the Application 🚀
 
 To run the application in development mode:
 ```sh
 cargo tauri dev
 ```
+
+### Building the Application 🏗️
+
+To build the application for distribution:
+```sh
+cargo tauri build
+```
+<br><br>
+
+### Cross-Compiling for Windows on Fedora 🐧
+
+1. **Install Required Packages:**
+   ```sh
+   sudo dnf install mingw64-gcc mingw64-winpthreads
+   ```
+
+2. **Add the Windows Target:**
+   ```sh
+   rustup target add x86_64-pc-windows-gnu
+   ```
+
+3. **Configure Cargo:**
+   Create or update the `.cargo/config.toml` file:
+   ```toml
+   [target.x86_64-pc-windows-gnu]
+   linker = "x86_64-w64-mingw32-gcc"
+   ```
+
+4. **Build the Project:**
+   ```sh
+   cargo build --target x86_64-pc-windows-gnu
+   ```
+
+5. **Build Tauri Application:**
+   ```sh
+   cargo tauri build --target x86_64-pc-windows-gnu
+   ```
+
+<br><br>
 
 ## Contributing 🤝
 
@@ -169,3 +215,4 @@ Contributions are welcome! Please open an issue or submit a pull request.
 ## License 📜
 
 This project is licensed under the MIT License.
+```
