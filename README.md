@@ -1,26 +1,26 @@
-# Tauri Wrapper
+# Tauri Wrapper 🚀
 
 This repository contains a Tauri wrapper for personal use. The project is public for anyone who might find it useful.
 
-## Features
+## Features ✨
 - Cross-platform desktop application
 - Lightweight and fast
 
-## Installation
+## Installation 🛠️
 
 Clone the repository:
 ```sh
-git clone https://github.com/yourusername/tauri-wrapper.git
+git clone https://github.com/thebooleanguy/tauri-wrapper.git
 cd tauri-wrapper
 ```
 
-### Requirements
+### Requirements 📋
 
-- Rust (Install from [rustup.rs](https://rustup.rs/) or your package manager)
-- Node.js (Install from [nodejs.org](https://nodejs.org/) or your package manager)
-- Tauri CLI (Install with `cargo install tauri-cli`)
+- **Rust**: Install from [rustup.rs](https://rustup.rs/) or your package manager
+- **Node.js**: Install from [nodejs.org](https://nodejs.org/) or your package manager
+- **Tauri CLI**: Install with `cargo install tauri-cli`
 
-### Setup
+### Setup ⚙️
 
 1. **Add the JAR package to the assets directory:**
    Place your `.jar` package in the `assets` directory. Ensure all paths are correctly set as class paths within the JAR.
@@ -28,72 +28,71 @@ cd tauri-wrapper
 2. **Edit `tauri.conf.json`:**
    Update the `tauri.conf.json` file to match your project's paths and names. Here’s an example configuration:
    ```json
-{
-  "build": {
-    "beforeBuildCommand": "",
-    "beforeDevCommand": "",
-    "devPath": ".",
-    "distDir": "./assets"
-  },
-  "package": {
-    "productName": "Dictionary WebApp",
-    "version": "1.0.0"
-  },
-  "tauri": {
-    "allowlist": {
-      "all": false
-    },
-    "bundle": {
-      "active": true,
-      "category": "Education",
-      "deb": {
-        "depends": []
-      },
-      "externalBin": [],
-      "icon": [
-        "icons/32x32.png",
-        "icons/128x128.png",
-        "icons/128x128@2x.png",
-        "icons/icon.icns",
-        "icons/icon.ico"
-      ],
-      "identifier": "com.thebooleanguy.dictionary",
-      "longDescription": "A dictionary web application for educational purposes.",
-      "macOS": {
-        "entitlements": null,
-        "exceptionDomain": "",
-        "frameworks": [],
-        "providerShortName": null,
-        "signingIdentity": null
-      },
-      "resources": ["./assets/dictionary-app-web.jar"],
-      "shortDescription": "Dictionary WebApp",
-      "targets": ["appimage"],
-      "windows": {
-        "certificateThumbprint": null,
-        "digestAlgorithm": "sha256",
-        "timestampUrl": "http://timestamp.digicert.com"
-      }
-    },
-    "security": {
-      "csp": null
-    },
-    "updater": {
-      "active": false
-    },
-    "windows": [
-      {
-        "url": "http://localhost:8080",
-        "fullscreen": false,
-        "height": 600,
-        "resizable": true,
-        "title": "Dictionary",
-        "width": 800
-      }
-    ]
-  }
-}
-
+   {
+     "build": {
+       "beforeBuildCommand": "",
+       "beforeDevCommand": "",
+       "devPath": ".",
+       "distDir": "./assets"
+     },
+     "package": {
+       "productName": "Dictionary WebApp",
+       "version": "1.0.0"
+     },
+     "tauri": {
+       "allowlist": {
+         "all": false
+       },
+       "bundle": {
+         "active": true,
+         "category": "Education",
+         "deb": {
+           "depends": []
+         },
+         "externalBin": [],
+         "icon": [
+           "icons/32x32.png",
+           "icons/128x128.png",
+           "icons/128x128@2x.png",
+           "icons/icon.icns",
+           "icons/icon.ico"
+         ],
+         "identifier": "com.thebooleanguy.dictionary",
+         "longDescription": "A dictionary web application for educational purposes.",
+         "macOS": {
+           "entitlements": null,
+           "exceptionDomain": "",
+           "frameworks": [],
+           "providerShortName": null,
+           "signingIdentity": null
+         },
+         "resources": ["./assets/dictionary-app-web.jar"],
+         "shortDescription": "Dictionary WebApp",
+         "targets": ["appimage"],
+         "windows": {
+           "certificateThumbprint": null,
+           "digestAlgorithm": "sha256",
+           "timestampUrl": "http://timestamp.digicert.com"
+         }
+       },
+       "security": {
+         "csp": null
+       },
+       "updater": {
+         "active": false
+       },
+       "windows": [
+         {
+           "url": "http://localhost:8080",
+           "fullscreen": false,
+           "height": 600,
+           "resizable": true,
+           "title": "Dictionary",
+           "width": 800
+         }
+       ]
+     }
+   }
    ```
 
 3. **Check `src/main.rs`:**
@@ -149,27 +148,24 @@ cd tauri-wrapper
    }
    ```
 
-### Building the Application
-
-
-### Running the Application
-
-To run the application in development mode:
-```sh
-cargo tauri dev
-```
-
-### Building the Application for Distribution
+## Building the Application 🏗️
 
 To build the application for distribution:
 ```sh
 cargo tauri build
 ```
 
-## Contributing
+## Running the Application 🚀
+
+To run the application in development mode:
+```sh
+cargo tauri dev
+```
+
+## Contributing 🤝
 
 Contributions are welcome! Please open an issue or submit a pull request.
 
-## License
+## License 📜
 
 This project is licensed under the MIT License.
