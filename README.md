@@ -22,7 +22,7 @@ git clone https://github.com/thebooleanguy/tauri-wrapper.git
 cd tauri-wrapper
 ```
 
-<br><br>
+<br>
 
 ### Setup ⚙️
 
