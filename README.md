@@ -1,3 +1,5 @@
+<br><br>
+
 # Tauri Wrapper 🚀
 
 This repository contains a Tauri wrapper for personal use. The project is public for anyone who might find it useful.
