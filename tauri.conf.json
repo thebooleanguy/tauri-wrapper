@@ -6,8 +6,8 @@
     "distDir": "./assets"
   },
   "package": {
-    "productName": "SpringBootApp",
-    "version": "0.1.0"
+    "productName": "Dictionary WebApp",
+    "version": "1.0.0"
   },
   "tauri": {
     "allowlist": {
@@ -15,8 +15,7 @@
     },
     "bundle": {
       "active": true,
-      "category": "DeveloperTool",
-      "copyright": "",
+      "category": "Education",
       "deb": {
         "depends": []
       },
@@ -28,8 +27,8 @@
         "icons/icon.icns",
         "icons/icon.ico"
       ],
-      "identifier": "com.spellcheck-test.dev",
-      "longDescription": "",
+      "identifier": "com.thebooleanguy.dictionary",
+      "longDescription": "A dictionary web application for educational purposes.",
       "macOS": {
         "entitlements": null,
         "exceptionDomain": "",
@@ -37,13 +36,13 @@
         "providerShortName": null,
         "signingIdentity": null
       },
-      "resources": ["./assets/demo.jar"],
-      "shortDescription": "",
-      "targets": "all",
+      "resources": ["./assets/dictionary-app-web.jar"],
+      "shortDescription": "Dictionary WebApp",
+      "targets": ["appimage"],
       "windows": {
         "certificateThumbprint": null,
         "digestAlgorithm": "sha256",
-        "timestampUrl": ""
+        "timestampUrl": "http://timestamp.digicert.com"
       }
     },
     "security": {
@@ -58,9 +57,10 @@
         "fullscreen": false,
         "height": 600,
         "resizable": true,
-        "title": "SpringBootAppWindow",
+        "title": "Dictionary",
         "width": 800
       }
     ]
   }
 }
+
