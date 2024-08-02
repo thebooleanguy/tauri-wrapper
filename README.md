@@ -2,6 +2,8 @@
 
 This repository contains a Tauri wrapper for personal use. The project is public for anyone who might find it useful.
 
+<br><br>
+
 ## Features ✨
 - Cross-platform desktop application
 - Lightweight and fast
